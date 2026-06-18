@@ -1,18 +1,17 @@
-name: CI básico
+name: Ejecutar en Push a Main
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Descargar código
+      - name: Clonar repositorio
         uses: actions/checkout@v4
 
-      - name: Ejecutar script
-        run: echo "Hola, tu workflow funciona 🚀"
+      - name: Mostrar mensaje
+        run: echo "Se hizo push a la rama main 🚀"
